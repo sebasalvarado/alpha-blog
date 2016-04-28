@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Lato:100italic,100,300' rel='stylesheet' type='text/css'>
+  <title>Framework Test Page</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="bootstrap/js/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <%= image_tag 'udacity-logo.png' %>
+      </div>
+      <div class="col-md-6">
+        <h1  class="title-super text-uppercase text-right text-muted">Sebastian Alvarado</h1>
+        <h3 class="text-right text-muted">Front-end Ninja Java Architect and Android </h3>
+        <%= link_to 'About',about_path %>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr class="title-super">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag 'puppy.png' %>
+      </div>
+      <div class="col-md-8">
+        <h3 class="title-super text-main"> What you would want to know about me </h3>
+      </div>
+    </div>
+    <div class="row" >
+      <h2 class="text-thin"> FEATURED WORK</h2>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src="http://placehold.it/350x200" class ="img-responsive img-rounded">
+        <h2> Dr.Flights Android</h2>
+        <p> <a href="https://github.com/sebasalvarado/DrFlights"></a></p>
+      </div>
+      <div class="col-md-4">
+        <img src="http://placehold.it/350x200" class ="img-rounded img-responsive">
+        <h2> UniSurvive iOS</h2>
+      </div>
+      <div class="col-md-4">
+        <img src="http://placehold.it/350x200" class ="img-rounded img-responsive">
+        <h2> QwikCommerce Web App</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <h2>My Interests</h2>
+        <p> I am fascinated with technology and the power that we know have in our hands to change the way we will live tomorrow.</p>
+      </div>
+      <div class="col-md-6">
+        <h2> About Me</h2>
+        <p> I was born and raised by a wonderful family in Ecuador. Currently studying Computer Science and Statistics at University of Toronto. I have always been encouraged to follow my dreams and to give others whatever I have the oppoortunity to learn. I believe firmly that our generation holds a tremendous power to change the way we will live tomorrow. I am a nature lover, computer enthusiast who is always looking for something new to learn. I love to play soccer and guitar is the best way I can find to relax. I love reading and having amazing conversations with amazing people that will broaden my knowledge every day.
+        </p>
+      </div>
+      <div class="col-md-3">
+        <h2>Contact Information</h2>
+        <a> Email: sebastian.alvarado@mail.utoronto.ca</a>
+        <address>
+          <strong>University of Toronto</strong><br>
+          10 Conlins Road, Scarborough ON<br>
+          <abbr title="Phone">P:</abbr> 416-729-7804
+        </address>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Modal -->
+<div class="modal fade" id="project1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Dr Flights Android Application</h4>
+      </div>
+      <div class="modal-body">
+        <img class="img-responsive" src="images/555.jpeg">
+        This was the first Android App that I developed. This project was assigned in CSCB07(Software Design). The essential skills I learned after the development of this project were: Subversion, Effective Team Communication, Management of Device Internal Memory, Read and Write Serialized Files from the Device internal memory and Orthogonal Development. Also, we were able to apply all of our Object Oriented Principles learned such as hierarchical design, interfaces, method overriding and overloading which facilitated the development of our application. Last, but not least we implemented a graph exploration algorithm known as breadth first-search (BFS) to find all the possible flight combinations from point A to point B.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</body>
+</html>
+
