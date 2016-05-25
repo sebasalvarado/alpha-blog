@@ -1,16 +1,25 @@
 class ArticlesController < ApplicationController
-
+	def index
+	end
 	def new
 		@article = Article.new
 	end
 
 	def create 
-		#Display the articla in JSON
-		#render plain: params[:article].inspect
+		#Create the Article instance variable
 		@article = Article.new(article_params)
-		@article.save
-		#Determine the view after the article has been saved
-		redirect_to articles_show(@article)
+		if @article.save
+			#Inform the User
+			flash[:notice] = "Article was successfully saved"
+			redirect_to article_path(@article)
+		else
+			#The article did not pass validation filter and we shall render the new article view
+			render 'new'
+		end
+	end
+
+	def show
+			@article = Article.find(params[:id])
 	end
 
 	#Helper method to get the params that were passed
