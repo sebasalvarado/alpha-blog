@@ -1,4 +1,4 @@
-<h1> Create an Article </h1>
+<h1> Edit Existing Article </h1>
 
 <% if @article.errors.any? %>
 	<h2> The following errors preventing the article from getting created </h2>
@@ -9,6 +9,7 @@
 	</ul>
 	<% end %>
 
+<!--Base on the article ID Rails will prefill the information into the appropriate box from the databas -->
 <%= form_for @article do |f| %>
 	<p>
 		<%= f.label :title %></br>
@@ -21,6 +22,8 @@
 	<p>
 		<%= f.submit %>
 	</p>
+	<p>
+
 
 <% end %>
 <%= link_to "Back to Articles Listing", articles_path %>
