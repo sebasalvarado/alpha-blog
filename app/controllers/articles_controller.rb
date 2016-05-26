@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+	#Ensure we call 
+	before_action :find_article, only: [:edit, :update, :show, :destroy]
 	def index
 		#Grab articles from the database
 		@all_articles = Article.all
@@ -21,15 +23,15 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
-			@article = Article.find(params[:id])
+		
 	end
 
 	def edit
-		@article = Article.find(params[:id])
+		
 	end
 
 	def destroy 
-		@article = Article.find(params[:id])
+		
 		@article.destroy
 
 		flash[:notice] = "Article was successfully deleted"
@@ -37,7 +39,6 @@ class ArticlesController < ApplicationController
 	end
 
 	def update
-		@article = Article.find(params[:id])
 		if @article.update(article_params)
 			flash[:notice] = "Article was successfully updated"
 			redirect_to article_path(@article)
@@ -46,6 +47,12 @@ class ArticlesController < ApplicationController
 		end
 			
 	end
+
+	#Helper method to find the article with id 
+	private
+		def find_article
+			@article = Article.find(params[:id])
+		end
 
 	#Helper method to get the params that were passed
 	private
