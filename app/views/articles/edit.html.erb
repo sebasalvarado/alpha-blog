@@ -10,20 +10,6 @@
 	<% end %>
 
 <!--Base on the article ID Rails will prefill the information into the appropriate box from the databas -->
-<%= form_for @article do |f| %>
-	<p>
-		<%= f.label :title %></br>
-		<%= f.text_field :title %>
-	</p>
-	<p>
-		<%= f.label :description %></br>
-		<%= f.text_area :description %>
-	</p>
-	<p>
-		<%= f.submit %>
-	</p>
-	<p>
-
-
-<% end %>
+<!--Calling the _form partial -->
+<%= render 'form'%>
 <%= link_to "Back to Articles Listing", articles_path %>
