@@ -5,6 +5,12 @@ root to:'pages#home'
 
 get 'about', to:'pages#about'
 
+get 'signup', to: 'users#new'
+
+#post 'users', to: 'users#create'
+
+#Create the paths for all CRUD operations on users
+resources :users, except: [:new]
 #Creates the paths for all the CRUD operations on articles
 resources :articles
   # The priority is based upon order of creation: first created -> highest priority.
