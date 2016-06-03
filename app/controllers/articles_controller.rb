@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
 	def create 
 		#Create the Article instance variable
 		@article = Article.new(article_params)
+		@article.user = User.first
 		if @article.save
 			#Inform the User
 			flash[:success] = "Article was successfully saved"
