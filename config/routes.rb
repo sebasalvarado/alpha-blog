@@ -7,8 +7,6 @@ get 'about', to:'pages#about'
 
 get 'signup', to: 'users#new'
 
-#post 'users', to: 'users#create'
-
 #Create the paths for all CRUD operations on users
 resources :users, except: [:new]
 #Creates the paths for all the CRUD operations on articles
