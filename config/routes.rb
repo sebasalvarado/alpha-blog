@@ -7,6 +7,11 @@ get 'about', to:'pages#about'
 
 get 'signup', to: 'users#new'
 
+#Building Routes to log in and log out
+get 'login', to: 'session#new'
+post 'login', to: 'session#create'
+delete 'logout', to: 'session#destroy'
+
 #Create the paths for all CRUD operations on users
 resources :users, except: [:new]
 #Creates the paths for all the CRUD operations on articles
