@@ -1,6 +1,11 @@
 class ArticlesController < ApplicationController
 	#Ensure we call 
 	before_action :find_article, only: [:edit, :update, :show, :destroy]
+	#This ensures that we require to be logged in in order to perform any action of this controller
+	# except for showing the article 
+	before_action :require_user, except: [:index, :show]
+	#Ensure that the user who edits, updates and destroys articles is the same as the author
+	before_action :require_same_user, only: [:edit, :update,:destroy]
 	def index
 		#Grab articles from the database
 		@articles = Article.paginate(page: params[:page], per_page: 5)
@@ -59,6 +64,13 @@ class ArticlesController < ApplicationController
 	private
 		def article_params
 			params.require(:article).permit(:title, :description)
+		end
+
+		def require_same_user
+			if current_user != @article.user
+				flash[:danger] = "You can only edit or delete your own article"
+				redirect_to root_path
+			end
 		end
 
 end
