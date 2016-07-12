@@ -2,7 +2,7 @@
 
 class User < ActiveRecord::Base
 	#Indicate that a user can be author of many articles
-	has_many :articles 
+	has_many :articles, dependent: :destroy
 	before_save { self.email = email.downcase }
 
 	#Validating User Information Before saving it 
